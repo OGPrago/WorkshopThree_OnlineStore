@@ -1,23 +1,23 @@
 package com.ps;
 
 public class Product {
-    private String sku;
+    private int sku;
     private String productName;
     private float price;
     private String department;
 
-    public Product(String sku, String productName, float price, String department) {
+    public Product(int sku, String productName, float price, String department) {
         this.sku = sku;
         this.productName = productName;
         this.price = price;
         this.department = department;
     }
 
-    public String getSku() {
+    public int getSku() {
         return sku;
     }
 
-    public void setSku(String sku) {
+    public void setSku(int sku) {
         this.sku = sku;
     }
 
