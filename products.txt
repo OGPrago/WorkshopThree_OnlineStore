@@ -11,3 +11,27 @@ SKU|Product Name|Price|Department
 10|USB C to A Cable|13.95|Electronics
 11|Solar Powered Battery Charger|19.99|Electronics
 12|Wireless Charger iPhone|12.99|Electronics
+
+
+// Steps to add items to a cart
+//1.Go to store website
+//2. Select item
+//3. Click to add to cart
+//4.Click go to cart
+//5.Select go to check out, remove item, edit quantity, compare with other items, share
+
+package com.ps;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int userIn;
+
+    do {
+         System.out.println("Please select an item ");
+          System.out.println("\t1) Add to Cart");
+
+
+    }
