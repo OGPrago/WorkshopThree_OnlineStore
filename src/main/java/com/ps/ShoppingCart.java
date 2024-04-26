@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShoppingCart {
     //ArrayList containing items in cart
-    private ArrayList<Product> itemsInCart;
+    private static ArrayList<Product> itemsInCart;
     //Constructor of Shopping Cart
     public ShoppingCart(){
         itemsInCart = new ArrayList<>();

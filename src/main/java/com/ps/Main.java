@@ -1,8 +1,5 @@
 package com.ps;
 import java.util.ArrayList;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -19,8 +16,10 @@ public class Main {
 
             switch (userIn) {
                 case 1:
+
                     break;
                 case 2:
+
                     break;
                 case 3:
                     break;
@@ -29,5 +28,26 @@ public class Main {
             }
 
         } while(userIn != 3);
+    }
+    //method to display products
+    private static void displayProducts(ArrayList<Product> products){
+        System.out.println("Products: ");
+        for (int counter1 = 0; counter1 < products.size(); counter1++){
+            Product product = products.get(counter1);
+            System.out.println(product.getSku() + ". " + product.getProductName() + ", $" + product.getPrice() +" " + product.getDepartment());
+        }
+    }
+    //method to display items in cart
+    private static void displayCart(ArrayList<Product> itemsInCart){
+        if(itemsInCart.isEmpty()) {
+            System.out.println("Your cart is empty.");
+        } else {
+            System.out.println("Your Cart:");
+            for (int counter2 = 0; counter2 < itemsInCart.size(); counter2++){
+                Product product = itemsInCart.get(counter2);
+                System.out.println(product.getSku() + ". " + product.getProductName() + ", $" + product.getPrice() +" " + product.getDepartment());
+            }
+        }
+
     }
 }

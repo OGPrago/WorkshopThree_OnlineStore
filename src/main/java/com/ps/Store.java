@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Store {
     //ArrayList to store products
-    private ArrayList<Product> products;
+    private static ArrayList<Product> products;
 
     // Constructor
     public Store() {
@@ -35,7 +35,7 @@ public class Store {
         }
     }
     //method to read list of products
-    public ArrayList<Product> getProducts(){
+    public static ArrayList<Product> getProducts(){
         return products;
     }
 }
