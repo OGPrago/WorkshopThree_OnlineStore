@@ -44,5 +44,15 @@ public class Product {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "sku=" + sku +
+                ", productName='" + productName + '\'' +
+                ", price=" + price +
+                ", department='" + department + '\'' +
+                '}';
+    }
 }
 
