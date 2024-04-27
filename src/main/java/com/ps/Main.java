@@ -16,15 +16,57 @@ public class Main {
 
             switch (userIn) {
                 case 1:
+                    System.out.println("Here are all our products.");
+                    int productsCommand;
 
+                    do {
+                    System.out.println("\t1) Search");
+                    System.out.println("\t2) Add product to cart");
+                    System.out.println("\t3) Back to home screen");
+                    productsCommand = scanner.nextInt();
+
+                    switch (productsCommand) {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            System.out.println("Command not found.");
+                    }
+
+                    } while(productsCommand != 3);
                     break;
                 case 2:
+                    System.out.println("Your cart");
 
+
+                    int cartCommand;
+
+                    do {
+                        System.out.println("\t1) Check out");
+                        System.out.println("\t2) Remove Product");
+                        System.out.println("\t3) Back to home screen");
+                        cartCommand = scanner.nextInt();
+
+                        switch (cartCommand){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                System.out.println("Command not found.");
+                        }
+                    } while(cartCommand != 3);
                     break;
                 case 3:
+                    System.out.println("Thank you for shopping.");
                     break;
                 default:
-                    System.out.println("Command not found");
+                    System.out.println("Command not found.");
             }
 
         } while(userIn != 3);
