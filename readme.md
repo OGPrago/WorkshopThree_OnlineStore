@@ -5,6 +5,7 @@ OnlineStore is an application that simulates an online store; with search, add a
 
 - [Features](#features)
 - [Display Screens](#display-screens)
+- [Interesting Code](#interesting-code)
 
 ## Features
 - Search products by:
@@ -20,3 +21,5 @@ OnlineStore is an application that simulates an online store; with search, add a
 
 ### Display Product Screen
 ![Screenshot 2024-04-28 230228](https://github.com/OGPrago/WorkshopThree_OnlineStore/assets/37696960/536a85ae-2d1c-4655-ac90-4c959fec6523)
+
+## Interesting Code
