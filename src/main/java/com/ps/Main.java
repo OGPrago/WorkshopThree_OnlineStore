@@ -17,7 +17,6 @@ public class Main {
             switch (userIn) {
                 case 1:
                     System.out.println("Here are all our products.");
-                    displayProducts();
 
                     int productsCommand;
 
