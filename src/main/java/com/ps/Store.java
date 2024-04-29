@@ -49,4 +49,36 @@ public class Store {
         }
         return null; //product not found
     }
+    // method to search products by price range
+    public ArrayList<Product> searchByPrice(float minPrice, float maxPrice) {
+        ArrayList<Product> searchResults = new ArrayList<>();
+        for (Product product : products) {
+            if (product.getPrice() >= minPrice && product.getPrice() <= maxPrice) {
+                searchResults.add(product);
+            }
+        }
+        return searchResults;
+    }
+
+    // method to search products by department
+    public ArrayList<Product> searchByDepartment(String department) {
+        ArrayList<Product> searchResults = new ArrayList<>();
+        for (Product product : products) {
+            if (product.getDepartment().equalsIgnoreCase(department)) {
+                searchResults.add(product);
+            }
+        }
+        return searchResults;
+    }
+    // method to search products by product name
+    public ArrayList<Product> searchByName(String name) {
+        ArrayList<Product> searchResults = new ArrayList<>();
+        for (Product product : products) {
+            if (product.getProductName().toLowerCase().contains(name.toLowerCase())) {
+                searchResults.add(product);
+            }
+        }
+        return searchResults;
+    }
+
 }
