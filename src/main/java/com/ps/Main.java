@@ -1,11 +1,22 @@
 package com.ps;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Store store = new Store();
+        ShoppingCart shoppingCart = new ShoppingCart();
         int userIn;
+// Steps to add items to a cart
+//1.Go to store website
+//2. Select item
+//3. Click to add to cart
+//4.Click go to cart
+//5.Select go to check out, remove item, edit quantity, compare with other items, share
+
 
         do {
             System.out.println("Welcome to the store. Please select an option: ");
@@ -17,29 +28,45 @@ public class Main {
             switch (userIn) {
                 case 1:
                     System.out.println("Here are all our products.");
+                    displayProducts(store.getProducts());
                     int productsCommand;
 
                     do {
-                    System.out.println("\t1) Search");
-                    System.out.println("\t2) Add product to cart");
-                    System.out.println("\t3) Back to home screen");
-                    productsCommand = scanner.nextInt();
+                        System.out.println("\t1) Search");
+                        System.out.println("\t2) Add product to cart");
 
-                    switch (productsCommand) {
-                        case 1:
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        default:
-                            System.out.println("Command not found.");
-                    }
 
-                    } while(productsCommand != 3);
+                        System.out.println("\t3) Back to home screen");
+
+                        productsCommand = scanner.nextInt();
+
+                        switch (productsCommand) {
+                            case 1:
+                                break;
+                            case 2:
+                                System.out.println("Enter the SKU of the product to add to cart:");
+                                int skuToAdd = scanner.nextInt();
+                                Product productToAdd = store.findProductBySku(skuToAdd);
+                                if(productToAdd != null){
+                                    shoppingCart.addItem(productToAdd);
+                                    System.out.println(productToAdd.getProductName()+ " added to cart.");
+                                } else {
+                                    System.out.println("Product not Found.");
+                                }
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                System.out.println("Command not found.");
+                        }
+
+                    } while (productsCommand != 3);
                     break;
                 case 2:
                     System.out.println("Your cart");
+                    displayCart(ShoppingCart.getItemsInCart());
+
+
 
 
                     int cartCommand;
@@ -50,7 +77,7 @@ public class Main {
                         System.out.println("\t3) Back to home screen");
                         cartCommand = scanner.nextInt();
 
-                        switch (cartCommand){
+                        switch (cartCommand) {
                             case 1:
                                 break;
                             case 2:
@@ -60,7 +87,7 @@ public class Main {
                             default:
                                 System.out.println("Command not found.");
                         }
-                    } while(cartCommand != 3);
+                    } while (cartCommand != 3);
                     break;
                 case 3:
                     System.out.println("Thank you for shopping.");
@@ -69,25 +96,27 @@ public class Main {
                     System.out.println("Command not found.");
             }
 
-        } while(userIn != 3);
+        } while (userIn != 3);
     }
+
     //method to display products
-    private static void displayProducts(ArrayList<Product> products){
+    private static void displayProducts(ArrayList<Product> products) {
         System.out.println("Products: ");
-        for (int counter1 = 0; counter1 < products.size(); counter1++){
+        for (int counter1 = 0; counter1 < products.size(); counter1++) {
             Product product = products.get(counter1);
-            System.out.println(product.getSku() + ". " + product.getProductName() + ", $" + product.getPrice() +" " + product.getDepartment());
+            System.out.println(product.getSku() + ". " + product.getProductName() + ", $" + product.getPrice() + " " + product.getDepartment());
         }
     }
+
     //method to display items in cart
-    private static void displayCart(ArrayList<Product> itemsInCart){
-        if(itemsInCart.isEmpty()) {
+    private static void displayCart(ArrayList<Product> itemsInCart) {
+        if (itemsInCart.isEmpty()) {
             System.out.println("Your cart is empty.");
         } else {
             System.out.println("Your Cart:");
-            for (int counter2 = 0; counter2 < itemsInCart.size(); counter2++){
+            for (int counter2 = 0; counter2 < itemsInCart.size(); counter2++) {
                 Product product = itemsInCart.get(counter2);
-                System.out.println(product.getSku() + ". " + product.getProductName() + ", $" + product.getPrice() +" " + product.getDepartment());
+                System.out.println(product.getSku() + ". " + product.getProductName() + ", $" + product.getPrice() + " " + product.getDepartment());
             }
         }
 

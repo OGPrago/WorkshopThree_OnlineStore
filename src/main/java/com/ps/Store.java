@@ -1,5 +1,6 @@
 package com.ps;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -37,5 +38,15 @@ public class Store {
     //method to read list of products
     public static ArrayList<Product> getProducts(){
         return products;
+    }
+    //method to find a product by sku
+    public Product findProductBySku(int sku){
+        for (Product product : products){
+            if (product.getSku() == sku){
+                return product;
+            }
+
+        }
+        return null; //product not found
     }
 }
