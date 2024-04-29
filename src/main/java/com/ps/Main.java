@@ -42,6 +42,7 @@ public class Main {
 
                         switch (productsCommand) {
                             case 1:
+
                                 break;
                             case 2:
                                 System.out.println("Enter the SKU of the product to add to cart:");
@@ -81,6 +82,15 @@ public class Main {
                             case 1:
                                 break;
                             case 2:
+                                System.out.println("Enter the SKU of the product to remove from cart:");
+                                int skuToRemove = scanner.nextInt();
+                                Product productToRemove = store.findProductBySku(skuToRemove);
+                                if(productToRemove != null){
+                                    shoppingCart.removeItem(productToRemove);
+                                    System.out.println(productToRemove.getProductName()+ " removed from cart.");
+                                } else {
+                                    System.out.println("Product not Found.");
+                                }
                                 break;
                             case 3:
                                 break;
