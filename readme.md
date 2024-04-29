@@ -1,6 +1,6 @@
 # WorkshopThree_OnlineStore
 
-OnlineStore is an application that simulates an online store; with search, add and remove products funtions. 
+OnlineStore is an application that simulates an online store; with search, add, and remove product functions. 
 ## Table of Contents
 
 - [Features](#features)
