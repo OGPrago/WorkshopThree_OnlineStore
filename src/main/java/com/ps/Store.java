@@ -1,6 +1,6 @@
 package com.ps;
 
-import javax.swing.*;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

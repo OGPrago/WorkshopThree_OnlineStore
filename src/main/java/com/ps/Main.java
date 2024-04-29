@@ -1,4 +1,6 @@
 package com.ps;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,12 +11,7 @@ public class Main {
         Store store = new Store();
         ShoppingCart shoppingCart = new ShoppingCart();
         int userIn;
-// Steps to add items to a cart
-//1.Go to store website
-//2. Select item
-//3. Click to add to cart
-//4.Click go to cart
-//5.Select go to check out, remove item, edit quantity, compare with other items, share
+
 
 
         do {
@@ -114,6 +111,7 @@ public class Main {
 
                         switch (cartCommand) {
                             case 1:
+                                checkout(shoppingCart);
                                 break;
                             case 2:
                                 System.out.println("Enter the SKU of the product to remove from cart:");
@@ -163,6 +161,56 @@ public class Main {
                 System.out.println(product.getSku() + ". " + product.getProductName() + ", $" + product.getPrice() + " " + product.getDepartment());
             }
         }
+
+    }
+    // method to check out
+    private static void checkout(ShoppingCart shoppingCart) {
+        // calculate total sales amount
+        float totalSalesAmount = 0;
+        ArrayList<Product> itemsInCart = shoppingCart.getItemsInCart();
+        for (Product product : itemsInCart) {
+            totalSalesAmount += product.getPrice();
+        }
+        System.out.println("Total Sales Amount: $" + String.format("%.2f",totalSalesAmount));
+
+        // prompt the user for payment
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter payment amount:");
+        float paymentAmount = scanner.nextFloat();
+
+        // verify payment amount
+        if (paymentAmount < totalSalesAmount) {
+            System.out.println("Insufficient payment. Payment amount must cover the total sales amount.");
+            return;
+        }
+
+        // calculate change
+        float change = paymentAmount - totalSalesAmount;
+        System.out.println("Change: $" + String.format("%.2f",change));
+
+        // print sales receipt to screen
+        printSalesReceipt(itemsInCart, totalSalesAmount, paymentAmount, change);
+
+    }
+
+    // method to print sales receipt
+    private static void printSalesReceipt(ArrayList<Product> itemsInCart, float totalSalesAmount, float paymentAmount, float change) {
+        // get current date and time
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy-HH:mm");
+        String formattedDateTime = now.format(formatter);
+
+        // print sales receipt
+        System.out.println("Sales Receipt:");
+        System.out.println("Order Date: " + formattedDateTime);
+        System.out.println("Sales Total: $" + String.format("%.2f",totalSalesAmount));
+        System.out.println("Amount Paid: $" + String.format("%.2f",paymentAmount));
+        System.out.println("Change Given: $" + String.format("%.2f",change));
+        System.out.println("Items:");
+        for (Product product : itemsInCart) {
+            System.out.println(product.getSku() + ". " + product.getProductName() + ", $" + String.format("%.2f", product.getPrice()));
+        }
+
 
     }
 }
