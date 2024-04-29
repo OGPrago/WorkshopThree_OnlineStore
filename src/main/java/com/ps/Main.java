@@ -17,6 +17,8 @@ public class Main {
             switch (userIn) {
                 case 1:
                     System.out.println("Here are all our products.");
+                    displayProducts();
+
                     int productsCommand;
 
                     do {
@@ -27,6 +29,45 @@ public class Main {
 
                     switch (productsCommand) {
                         case 1:
+                            System.out.println("Enter SKU of item you want to search: ");
+                            int searchCommand = scanner.nextInt();
+
+                            if (searchCommand == 1) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 2) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 3) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 4) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 5) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 6) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 7) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 8) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 9) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 10) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 11) {
+                                System.out.println();
+                            }
+                            else if (searchCommand == 12) {
+                                System.out.println();
+                            }
                             break;
                         case 2:
                             break;
