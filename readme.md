@@ -4,7 +4,7 @@ OnlineStore is an application that simulates an online store; with search, add a
 ## Table of Contents
 
 - [Features](#features)
-- [Display Screens](#displayscreens)
+- [Display Screens](#display-screens)
 
 ## Features
 - Search products by:
